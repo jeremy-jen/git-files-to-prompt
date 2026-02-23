@@ -11,11 +11,11 @@ uv tool install git-files-to-prompt
 
 **From GitHub:**
 ```sh
-# HTTPS (public)
-uv tool install "git+https://github.com/jeremy-jen/utils#subdirectory=utils/git_files_to_prompt"
+# HTTPS
+uv tool install "git+https://github.com/jeremy-jen/git-files-to-prompt"
 
-# SSH (Host github alias)
-uv tool install "git+ssh://github/jeremy-jen/utils#subdirectory=utils/git_files_to_prompt"
+# SSH
+uv tool install "git+ssh://git@github.com/jeremy-jen/git-files-to-prompt"
 ```
 
 **Run without installing:**
@@ -26,12 +26,12 @@ uvx git-files-to-prompt
 ## Usage
 
 ```
-git-files-to-prompt [-d DIR] [-i PATTERN ...] [-e PATTERN ...] [-o OUTPUT_DIR] [-n NAME] [-f {txt,xml}]
+git-files-to-prompt [DIR] [-i PATTERN ...] [-e PATTERN ...] [-o OUTPUT_DIR] [-n NAME] [-f {txt,xml}]
 ```
 
-| Flag | Description |
-|------|-------------|
-| `-d`, `--dir` | Input directory (must be a git repo). Defaults to `.` |
+| Argument | Description |
+|----------|-------------|
+| `DIR` | Input directory — must be inside a git repo (not itself a separate nested git repo). Defaults to `.` |
 | `-i`, `--include` | Glob patterns to include (e.g. `*.py *.md`) |
 | `-e`, `--exclude` | Glob patterns to exclude (e.g. `*.lock`) |
 | `-o`, `--output-dir` | Output directory. Defaults to `<git-root>/__local__/` |
@@ -47,8 +47,8 @@ git-files-to-prompt
 # Pack only Python and Markdown files, excluding tests
 git-files-to-prompt -i '*.py' '*.md' -e 'tests/*'
 
-# Pack a specific repo, write to a custom location
-git-files-to-prompt -d ~/projects/myapp -o ~/Desktop -n myapp-snapshot
+# Pack a specific directory, write to a custom location
+git-files-to-prompt ~/projects/myapp -o ~/Desktop -n myapp-snapshot
 ```
 
 ## Output formats

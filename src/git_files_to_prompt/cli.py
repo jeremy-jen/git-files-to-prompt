@@ -4,7 +4,8 @@ from git_files_to_prompt.core import files_to_prompt
 
 def main():
     parser = argparse.ArgumentParser(description="Pack git-tracked files into a single file.")
-    parser.add_argument("-d", "--dir", dest="input_dir", help="Input directory (must be a git repo)")
+    parser.add_argument("input_dir", nargs="?", default=".", metavar="DIR",
+                        help="Input directory (must be inside a git repo). Defaults to '.'.")
     parser.add_argument("-i", "--include", nargs="+", dest="patterns_incl", help="Glob patterns to include")
     parser.add_argument("-e", "--exclude", nargs="+", dest="patterns_excl", help="Glob patterns to exclude")
     parser.add_argument("-o", "--output-dir", dest="output_dir", help="Output directory")

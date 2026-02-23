@@ -1,0 +1,33 @@
+# Python
+**/.venv/
+**/__pycache__/
+*.egg-info/
+*.py[cod]
+dist/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Ruff
+.ruff_cache/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.code-workspace
+
+# Secrets
+*.env
+*.pem
+
+# Local-only directories (double-underscore convention)
+.__*/
+__*/

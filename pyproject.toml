@@ -1,0 +1,37 @@
+[project]
+name = "git-files-to-prompt"
+version = "0.1.1"
+description = "Packs git-tracked files in a repo into a single file for feeding into AI models."
+readme = "README.md"
+authors = [
+    { name = "jeremy-jen", email = "jeremy-jen@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+license = {file = "LICENSE"}
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+git-files-to-prompt = "git_files_to_prompt.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.10.4,<0.11.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "C4"]
+ignore = ["E501"]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"**/tests/*" = ["S101"]
+"**/test_*.py" = ["S101"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

@@ -1,6 +1,6 @@
 [project]
 name = "git-files-to-prompt"
-version = "0.1.1"
+version = "0.1.2"
 description = "Packs git-tracked files in a repo into a single file for feeding into AI models."
 readme = "README.md"
 authors = [

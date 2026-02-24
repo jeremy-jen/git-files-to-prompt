@@ -1,9 +1,10 @@
 import argparse
 from git_files_to_prompt.core import files_to_prompt
-
+from importlib.metadata import version
 
 def main():
     parser = argparse.ArgumentParser(description="Pack git-tracked files into a single file.")
+    parser.add_argument("--version", action="version", version=f"%(prog)s {version('git-files-to-prompt')}")
     parser.add_argument("input_dir", nargs="?", default=".", metavar="DIR",
                         help="Input directory (must be inside a git repo). Defaults to '.'.")
     parser.add_argument("-i", "--include", nargs="+", dest="patterns_incl", help="Glob patterns to include")
